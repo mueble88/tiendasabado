@@ -12,10 +12,40 @@ let productos = [
     {nombre:"Cojin 3 demon slayer",precio:20000, foto:"../img/proc9.jpg",descripcion:"Cojin decorativo"},
     {nombre:"Stickers",            precio:5000,  foto:"../img/proc10.jpg",descripcion:"Tenemos stickers de varias series de anime"}, 
 ]
+
+
+//creo la referencia al componente padre
+//creo una variable para almacenar la base
+//sobre la cual voy a pintar
+let fila=document.getElementById("fila");
+
 // recorriendo un arreglo
 // buscar/seleccionar/esculcar
-productos.forEach(function(producto) {
-    console.log("Hola !!!")
+productos.forEach(function(producto) { //function anonima
+    console.log(producto.nombre)
+
+    //receta para pintar js
+
+    //1. comience a crear una estructura que necesite
+
+    //creo la columna
+    let columna=document.createElement("div")
+    columna.classList.add("col")
+
+    //creo la tarjeta
+    let tarjeta=document.createElement("div")
+    tarjeta.classList.add("card")
+    tarjeta.classList.add("h-100")
+
+    //creo la imagen
+    let imagen=document.createElement("img")
+    imagen.classList.add("card-img-top")
+    imagen.src=producto.foto 
+
+    //2. ordenar la estructura
+    tarjeta.appendChild(imagen)
+    columna.appendChild(tarjeta)
+    fila.appendChild(columna)
 })
 
 // Escuchando clic en el boton
