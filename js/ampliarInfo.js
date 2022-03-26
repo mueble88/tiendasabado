@@ -15,6 +15,8 @@ export function ampliarInformacion(event){
         foto.src=producto.foto
         let nombre=document.getElementById("nombreinfo")
         nombre.textContent=producto.nombre
+
+        return producto
     }
 
 }   
